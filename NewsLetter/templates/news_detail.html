@@ -1,0 +1,12 @@
+{% extends 'default.html' %}
+
+{% block title %}{{ post.title|censor }}{% endblock %}
+
+{% block content %}
+    <h1>{{ post.title|censor }}</h1>
+    <small>{{ post.created_at|date:"d.m.Y" }}</small>
+    <p>{{ post.content|censor }}</p>
+    <a href="{% url 'news_list' %}">Назад к списку новостей</a>
+{% endblock %}
+
+
